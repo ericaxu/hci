@@ -132,6 +132,23 @@
     float: right;
 }
 
+.conversation-container {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.conversation-header {
+    flex: 0 1 auto;
+}
+
+.conversation-content {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    margin-bottom: 50px
+}
+
 .conversation-entry {
     position: relative;
     padding: 10px 0 20px 0;
@@ -153,4 +170,14 @@
 
 .conversation-text {
     margin-left: 60px;
+}
+
+.conversation-reply {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+html, body, .container-fluid, .row {
+    height: 100%;
 }
