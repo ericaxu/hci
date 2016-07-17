@@ -112,3 +112,22 @@
 .nav-sidebar {
     clear: both;
 }
+
+.profile-container {
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+}
+
+.profile-img-container {
+    float: left;
+    margin-top: 6px;
+}
+
+.profile-detail-container {
+    float: right;
+}
