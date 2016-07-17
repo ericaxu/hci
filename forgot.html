@@ -17,30 +17,84 @@
 
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">
-                Project name
-            </a>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.html">Login</a></li>
-        </ul>
+
+<div class="jumbotron vertical-center">
+
+    <div class="container">
+        <form id="reset-ps-form" class="form-reset-ps" action="index.html" data-toggle="validator">
+
+            <div class="row">
+                <div class="col-md-7">
+                    <h2>Reset password</h2>
+
+                    <div class="form-group">
+                        <label for="inputEmail" class="sr-only">Email address</label>
+                        <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <a class="btn btn-default btn-block transition" href="index.html">Back</a>
+                        </div>
+
+                        <div class="col-xs-7">
+                            <button class="btn btn-primary btn-block" type="submit">Reset</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </form>
     </div>
-</nav>
 
-<div class="container">
-    <form class="form-signin">
-        <h2 class="form-signin-heading">Reset password</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Reset</button>
-    </form>
-</div> <!-- /container -->
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">Footer content here | Random Stuff | Filling Space | End of the World</p>
+    </div>
+</footer>
 
 
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+
+        $('#reset-ps-form').validate({
+
+            rules: {
+                inputEmail: {
+                    required: true,
+                    email: true
+                }
+            },
+            highlight: function(element) {
+                $(element).closest('.form-group').addClass('has-error');
+            },
+            unhighlight: function(element) {
+                $(element).closest('.form-group').removeClass('has-error');
+            },
+            errorElement: 'span',
+            errorClass: 'help-block',
+            errorPlacement: function(error, element) {
+                error.insertBefore(element.parent());
+            }
+        });
+
+        $("a.transition").click(function(event){
+            event.preventDefault();
+            linkLocation = this.href;
+            $("body").fadeOut(150, redirectPage);
+        });
+
+        function redirectPage() {
+            window.location = linkLocation;
+        }
+    });
+</script>
 </body>
 </html>
