@@ -262,15 +262,20 @@
             <div class="music-player">
                 <div class="row">
 
-                    <button type="button" class="btn btn-default">
-                        <span class="glyphicon glyphicon-play"></span>
-                    </button>
-
-                    <div class="music-slider">
-                        <input id="wave-slider" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="0" data-slider-handle="custom"/>
+                    <div class="action-controls col-sm-2">
+                        <button type="button" class="btn btn-lg btn-default pull-right">
+                            <span class="glyphicon glyphicon-play"></span>
+                        </button>
                     </div>
-                    <span id="curTime"><span id="wave-slider-value">0</span></span>
 
+                    <div class="waveform-display col-sm-10">
+                        <span id="curTime"><span id="wave-slider-value">00:00:00.000</span></span>
+
+                        <div class="music-slider">
+                            <input id="wave-slider" type="text" data-slider-min="0" data-slider-max="188000" data-slider-step="1" data-slider-value="0" data-slider-handle="custom" data-slider-tooltip="hide"/>
+                        </div>
+
+                    </div>
 
                 </div>
             </div>
@@ -352,9 +357,9 @@
             </div>
 
 
-
         </div>
     </div>
+
 
 
     <script src="js/ext/jquery.min.js"></script>
@@ -362,15 +367,19 @@
     <script src="js/main.js"></script>
     <script src="js/bootstrap-slider.js"></script>
 
+
     <script type="text/javascript">
 
 
+    function convertTime(ms) {
+        return new Date(ms).toISOString().slice(11, -1);
+    }
 
-        $("#wave-slider").slider({});
-        $("#wave-slider").on("slide", function(slideEvt) {
-            $("#wave-slider-value").text(slideEvt.value);
-        });
 
+    $("#wave-slider").slider({});
+    $("#wave-slider").on("change", function(slideEvt) {
+        $("#wave-slider-value").text(convertTime(slideEvt.value.newValue));
+    });
 
 
     </script>

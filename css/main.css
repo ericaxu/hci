@@ -247,8 +247,6 @@ html, body, .container-fluid, .row {
 }
 
 
-
-
 /* Music Panel Comments */
 
 .music-panel-comments {
@@ -293,7 +291,7 @@ html, body, .container-fluid, .row {
 /* Music Player */
 
 .music-player {
-    margin-bottom: 100px;
+    margin-bottom: 76px;
 }
 
 .music-player .action-controls {
@@ -301,11 +299,21 @@ html, body, .container-fluid, .row {
     padding: 0;
 }
 
+.music-player .action-controls .btn {
+    padding: 12px 18px;
+    font-size: 28px;
+    line-height: 1;
+    border-radius: 6px;
+}
+
+
+
+/* Music Player Slider */
 
 .slider-handle.custom {
     background: orange;
     width: 2px;
-    height: 20px;
+    height: 100px;
 }
 
 .slider.slider-horizontal .slider-tick, .slider.slider-horizontal .slider-handle {
@@ -316,6 +324,11 @@ html, body, .container-fluid, .row {
     width: 100%;
 }
 
+.slider.slider-horizontal .slider-track {
+    height: 50px;
+    background-image: url("../img/waveform.png");
+    background-size: 100% 100%;
+}
 
 .slider-handle.custom::before {
     line-height: 20px;
@@ -324,5 +337,9 @@ html, body, .container-fluid, .row {
     color: #726204;
 }
 
-
+.slider-selection {
+    background: transparent;
+    background-color:rgba(255,99,71,0.2);
+    border-radius: 4px 0 0 4px;
+}
 
