@@ -222,6 +222,11 @@ html, body, .container-fluid, .row {
 
 
 
+
+
+
+/* Music Panel General */
+
 .music-panel-container {
     position: relative;
     display: flex;
@@ -239,6 +244,48 @@ html, body, .container-fluid, .row {
 
 .music-panel-header .music-info {
     margin-left: 15px;
+}
+
+
+
+
+/* Music Panel Comments */
+
+.music-panel-comments {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    margin-bottom: 100px
+}
+
+.comments-entry {
+    margin-bottom: 5px;
+    display: inline-block;
+    width: 100%;
+}
+
+.comments-wrapper {
+    padding: 10px 0 15px 15px;
+    border: 1px solid #aaa;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.comments-timestamp {
+    padding-left: 0;
+}
+
+.comments-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    float: right;
+    margin-right: 15px;
+    margin-left: 20px;
+}
+
+.comments-text {
+    margin-bottom: 0;
+    margin-right: 85px;
 }
 
 
