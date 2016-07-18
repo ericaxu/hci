@@ -1,7 +1,10 @@
-$('.nav-sidebar-item--resources').on('click', function (e) {
+$('.nav-sidebar-item').on('click', function (e) {
     e.preventDefault();
 
-    openMiddlePane('resource');
+    $('.nav-sidebar-item').removeClass('active');
+    $(this).addClass('active');
+
+    openMiddlePane($(this).data('paneName'));
 });
 
 function openMiddlePane(paneName) {
