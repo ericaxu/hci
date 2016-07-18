@@ -205,3 +205,40 @@ html, body, .container-fluid, .row {
     font-size: 36px;
     color: #666;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.music-panel-container {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    background-color: #f5f5f5;
+    border-left: 1px solid #eee;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.music-panel-header {
+    margin-bottom: 25px;
+}
+
+.music-panel-header .music-info {
+    margin-left: 15px;
+}
+
+
