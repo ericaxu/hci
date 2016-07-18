@@ -132,7 +132,7 @@
     float: right;
 }
 
-.conversation-container {
+.middle-pane {
     position: relative;
     display: flex;
     flex-flow: column;
