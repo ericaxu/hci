@@ -260,7 +260,19 @@
 
 
             <div class="music-player">
+                <div class="row">
 
+                    <button type="button" class="btn btn-default">
+                        <span class="glyphicon glyphicon-play"></span>
+                    </button>
+
+                    <div class="music-slider">
+                        <input id="wave-slider" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="0" data-slider-handle="custom"/>
+                    </div>
+                    <span id="curTime"><span id="wave-slider-value">0</span></span>
+
+
+                </div>
             </div>
 
 
@@ -341,28 +353,27 @@
 
 
 
-
-
         </div>
-
-
-
     </div>
+
 
     <script src="js/ext/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/bootstrap-slider.js"></script>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/bootstrap-slider.js"></script>
-
-<script type="text/javascript">
+    <script type="text/javascript">
 
 
 
-</script>
+        $("#wave-slider").slider({});
+        $("#wave-slider").on("slide", function(slideEvt) {
+            $("#wave-slider-value").text(slideEvt.value);
+        });
+
+
+
+    </script>
 
 </body>
 </html>
