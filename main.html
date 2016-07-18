@@ -237,8 +237,6 @@
 
 
 
-
-
         <div class="col-sm-4 col-md-4 music-panel-container">
 
             <div class="music-panel-header">
@@ -253,7 +251,7 @@
                     </div>
 
                     <div class="comment-count">
-                        <span>20 comments</span>
+                        <span>7 comments</span>
                     </div>
                 </div>
             </div>
@@ -275,6 +273,12 @@
                             <input id="wave-slider" type="text" data-slider-min="0" data-slider-max="188000" data-slider-step="1" data-slider-value="0" data-slider-handle="custom" data-slider-tooltip="hide"/>
                         </div>
 
+                        <div id="comments-bar">
+                            <button type="button" class="btn btn-default btn-circle comments-hook" onclick="setSliderValue(18800)" style="left: calc(10% - 5px)"></button>
+                            <button type="button" class="btn btn-default btn-circle comments-hook" onclick="setSliderValue(37600)" style="left: calc(20% - 5px)"></button>
+                            <button type="button" class="btn btn-default btn-circle comments-hook" onclick="setSliderValue(84600)" style="left: calc(45% - 5px)"></button>
+                            <button type="button" class="btn btn-default btn-circle comments-hook" onclick="setSliderValue(112800)" style="left: calc(60% - 5px)"></button>
+                        </div>
                     </div>
 
                 </div>
@@ -283,8 +287,8 @@
 
             <div class="music-panel-comments">
 
-                <div class="comments-entry">
-                    <div class="comments-timestamp col-sm-3">00:00:800</div>
+                <div class="comments-entry-18800">
+                    <div class="comments-timestamp col-sm-3">00:18:800</div>
                     <div class="col-sm-9">
                         <div class="comments-wrapper pull-right">
                             <img class="comments-avatar" src="img/profile2.jpg" alt="">
@@ -294,62 +298,62 @@
                 </div>
 
 
-                <div class="comments-entry">
-                    <div class="comments-timestamp col-sm-3">00:00:800</div>
+                <div class="comments-entry-37600">
+                    <div class="comments-timestamp col-sm-3">00:37:600</div>
                     <div class="col-sm-9">
                         <div class="comments-wrapper pull-right">
                             <img class="comments-avatar" src="img/profile2.jpg" alt="">
-                            <p class="comments-text">This is a random comment.</p>
+                            <p class="comments-text">Surely this isn't too big of an issue. We can fix it during the next apocalypse.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="comments-entry">
-                    <div class="comments-timestamp col-sm-3">00:00:800</div>
+                <div class="comments-entry-37600">
+                    <div class="comments-timestamp col-sm-3">00:37:600</div>
                     <div class="col-sm-9">
                         <div class="comments-wrapper pull-right">
-                            <img class="comments-avatar" src="img/profile2.jpg" alt="">
-                            <p class="comments-text">This is a random comment.</p>
+                            <img class="comments-avatar" src="img/profile.jpg" alt="">
+                            <p class="comments-text">Once upon a time the world exploded into a million pieces. The end.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="comments-entry">
-                    <div class="comments-timestamp col-sm-3">00:00:800</div>
+                <div class="comments-entry-37600">
+                    <div class="comments-timestamp col-sm-3">00:37:600</div>
                     <div class="col-sm-9">
                         <div class="comments-wrapper pull-right">
                             <img class="comments-avatar" src="img/profile2.jpg" alt="">
-                            <p class="comments-text">This is a random comment.</p>
+                            <p class="comments-text">ofc it did =___=</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="comments-entry">
-                    <div class="comments-timestamp col-sm-3">00:00:800</div>
+                <div class="comments-entry-84600">
+                    <div class="comments-timestamp col-sm-3">01:24:600</div>
                     <div class="col-sm-9">
                         <div class="comments-wrapper pull-right">
-                            <img class="comments-avatar" src="img/profile2.jpg" alt="">
-                            <p class="comments-text">This is a random comment.</p>
+                            <img class="comments-avatar" src="img/profile.jpg" alt="">
+                            <p class="comments-text">Jelly-o muffin donut powder dessert. Cookie halvah biscuit jelly. Ice cream pastry candy lollipop danish. Cupcake cupcake cake bonbon wafer macaroon chocolate bar.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="comments-entry">
-                    <div class="comments-timestamp col-sm-3">00:00:800</div>
+                <div class="comments-entry-84600">
+                    <div class="comments-timestamp col-sm-3">01:24:600</div>
                     <div class="col-sm-9">
                         <div class="comments-wrapper pull-right">
                             <img class="comments-avatar" src="img/profile2.jpg" alt="">
-                            <p class="comments-text">This is a random comment.</p>
+                            <p class="comments-text">......... no comment =|</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="comments-entry">
-                    <div class="comments-timestamp col-sm-3">00:00:800</div>
+                <div class="comments-entry-112800">
+                    <div class="comments-timestamp col-sm-3">01:52:800</div>
                     <div class="col-sm-9">
                         <div class="comments-wrapper pull-right">
-                            <img class="comments-avatar" src="img/profile2.jpg" alt="">
-                            <p class="comments-text">This is a random comment.</p>
+                            <img class="comments-avatar" src="img/profile.jpg" alt="">
+                            <p class="comments-text">Meh. This convo is super weird anyways.</p>
                         </div>
                     </div>
                 </div>
@@ -357,32 +361,83 @@
             </div>
 
 
+            <div class="col-md-12 music-panel-add">
+                <button type="button" class="btn btn-default center-block">
+                    <span class="glyphicon glyphicon-pencil"></span>  Add Comment
+                </button>
+            </div>
+
+
         </div>
     </div>
+</div>
 
 
+<script src="js/ext/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/main.js"></script>
+<script src="js/bootstrap-slider.js"></script>
 
-    <script src="js/ext/jquery.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/bootstrap-slider.js"></script>
 
+<script type="text/javascript">
 
-    <script type="text/javascript">
+    function position() {
 
+        $( ".comments-hook" ).position({
+            of: $( "#comments-bar" ),
+            my: "center top",
+            at: "left top",
+            offset: "20 30",
+            collision: "flip flip"
+        });
+    }
+
+    function showComments(ms) {
+        $("[class^=comments-entry-]").css('display','none');
+
+        if (inRange(18800, ms)) {
+            $('.comments-entry-18800').css('display','inline-block');
+
+        } else if (inRange(37600, ms)) {
+            $('.comments-entry-37600').css('display','inline-block');
+
+        } else if (inRange(84600, ms)) {
+            $('.comments-entry-84600').css('display','inline-block');
+
+        } else if (inRange(112800, ms)) {
+            $('.comments-entry-112800').css('display','inline-block');
+
+        }
+    }
+
+    function inRange(src_ms, val) {
+        var showRangeInMS = 5000;
+
+        return val >= (src_ms - showRangeInMS) && val <= (src_ms + showRangeInMS)
+    }
 
     function convertTime(ms) {
         return new Date(ms).toISOString().slice(11, -1);
     }
 
+    function setSliderValue(val) {
+        $('#wave-slider').slider('setValue', val);
+        $("#wave-slider-value").text(convertTime(val));
+        showComments(val);
+    }
 
     $("#wave-slider").slider({});
     $("#wave-slider").on("change", function(slideEvt) {
         $("#wave-slider-value").text(convertTime(slideEvt.value.newValue));
+        showComments(slideEvt.value.newValue);
     });
 
+    $( function() {
+        position();
+    } );
 
-    </script>
+
+</script>
 
 </body>
 </html>

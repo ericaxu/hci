@@ -210,21 +210,6 @@ html, body, .container-fluid, .row {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Music Panel General */
 
 .music-panel-container {
@@ -246,6 +231,14 @@ html, body, .container-fluid, .row {
     margin-left: 15px;
 }
 
+.music-panel-add {
+    padding-bottom: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
 
 /* Music Panel Comments */
 
@@ -255,9 +248,9 @@ html, body, .container-fluid, .row {
     margin-bottom: 100px
 }
 
-.comments-entry {
+[class^=comments-entry-] {
     margin-bottom: 5px;
-    display: inline-block;
+    display: none;
     width: 100%;
 }
 
@@ -343,3 +336,30 @@ html, body, .container-fluid, .row {
     border-radius: 4px 0 0 4px;
 }
 
+
+
+/* Music Player Comments Bar */
+
+.comments-hook {
+    position: absolute;
+}
+
+#comments-bar {
+    margin-top: 40px;
+    position: relative;
+}
+
+#comments-bar button:focus {
+    outline: none;
+    background-color: #ffbb11;
+}
+
+.btn-circle {
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    padding: 3px 0;
+    border-radius: 15px;
+    background-color: #ffbb11;
+    border: none;
+}
