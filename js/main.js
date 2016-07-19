@@ -17,6 +17,14 @@ $('.js-upload-file').on('click', function (e) {
     e.preventDefault();
 });
 
+$('.js-switch-to-convo').on('click', function(e) {
+    var conversationName = $(this).text().trim();
+
+    openMiddlePane('conversation');
+
+    $('.current-conversation-title').text(conversationName);
+});
+
 
 
 //
