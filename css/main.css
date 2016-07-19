@@ -191,7 +191,7 @@ html, body, .container-fluid, .row {
 }
 
 .resource-file {
-    height: 100px;
+    height: 120px;
     width: 100px;
     padding: 15px 0;
     border: 1px solid #ddd;
@@ -199,6 +199,8 @@ html, body, .container-fluid, .row {
     text-align: center;
     display: inline-block;
     margin: 40px 20px 0 20px;
+    position: relative;
+    cursor: pointer;
 }
 
 .resource-file-icon {
@@ -206,6 +208,22 @@ html, body, .container-fluid, .row {
     color: #666;
 }
 
+.resource-file-operations {
+    display: none;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    color: #666;
+}
+
+.resource-file-operations span {
+    padding: 0 6px;
+}
+
+.resource-file:hover .resource-file-operations {
+    display: block;
+}
 
 
 
