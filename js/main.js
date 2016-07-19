@@ -17,7 +17,13 @@ $('.js-upload-file').on('click', function (e) {
     e.preventDefault();
 });
 
-$('.right-panel-close-btn').on('click', function () {
+
+
+//
+//      Conversation Reply
+//
+
+$(document).on('click', ".hide-right", function(){
     var rightPanel = $(this).closest('.right-panel');
     var originalWidth = rightPanel.outerWidth();
     $('.middle-pane').removeClass('col-md-6').addClass('col-md-10');
@@ -26,13 +32,46 @@ $('.right-panel-close-btn').on('click', function () {
     });
 });
 
+
+$(document).on('click', ".show-right", function(){
+    var rightPanel = $('.right-panel');
+    $('.middle-pane').removeClass('col-md-10').addClass('col-md-6');
+    rightPanel.animate({'left': 0}, 300, function () {
+        rightPanel.show();
+    });
+});
+
+
+
+//
+//      Conversation Reply
+//
+
 $('.js-send-reply').on('click', addReply);
 
-$('.conversation-reply-input').on('keyup', function (e) {
-    if (e.keyCode === 13) {
-        addReply();
+$('.conversation-reply-input').on('keypress', function (e) {
+    if (e.which === 13) {
+
+        if ( $('#conversation-reply-input').data()['bs.popover'].tip().hasClass('in') ) {
+            textToMusicTag();
+        } else {
+            addReply();
+        }
+
+    } else if (e.which === 35) {
+        showTagPopover();
+
+    } else if (e.which === 32) {
+        hideTagPopover();
     }
 });
+
+$('.conversation-reply-input').on('keyup', function (e) {
+    if (e.which === 8 || e.which === 27) {
+        hideTagPopover();
+    }
+});
+
 
 function create_el(tag, parent, class_name, text, attr, title) {
     var e = document.createElement(tag);
@@ -64,7 +103,19 @@ function addReply() {
 
     var newConversationEntry = create_el('div', null, 'conversation-entry pull-left');
     create_el('img', newConversationEntry, 'conversation-avatar', '', {src: 'img/profile.jpg'});
-    create_el('div', newConversationEntry, 'conversation-text', replyContent);
+
+    var newConversationContent = create_el('div', newConversationEntry, 'conversation-text');
+
+    var replyContentSplit = replyContent.split("#liberi_fatali ");
+    var tag = "<button class='btn btn-xs btn-default music-tag show-right'><span class='glyphicon glyphicon-music'></span><span>&nbsp;&nbsp;liberi_fatali</span></button> ";
+    var innerContentHTML = "";
+
+    for (var i = 0; i < replyContentSplit.length; i++) {
+        if (i != 0) { innerContentHTML += tag; }
+        innerContentHTML += replyContentSplit[i];
+    }
+
+    newConversationContent.html(innerContentHTML);
 
     $('.conversation-content')
         .append(newConversationEntry)
@@ -77,6 +128,13 @@ function openMiddlePane(paneName) {
     $('.middle-pane').removeClass('is-active');
     $('.' + paneName + '-container').addClass('is-active');
 }
+
+
+
+
+//
+//      Comments Bar
+//
 
 function position() {
     $(".comments-hook").position({
@@ -128,21 +186,62 @@ $("#wave-slider").on("change", function (slideEvt) {
 
 
 
+//
+//      Music Panel Comments
+//
+
 // Addresses bug : https://github.com/twbs/bootstrap/issues/16732
 // Solution from : https://github.com/twbs/bootstrap/pull/17702
 $('body').on('hidden.bs.popover', function (e) {
     $(e.target).data("bs.popover").inState = { click: false, hover: false, focus: false }
 });
 
-
 $('#btn-add-comment').popover({
     html: true,
     placement: 'top',
     content: function() {
-        return $("#popover-content").html();
+        return $("#add-comment-popover").html();
     }
 });
 
-function popoverClose() {
+function addCommentClose() {
     $('#btn-add-comment').popover('hide');
 }
+
+
+
+//
+//      Music Tagging
+//
+
+$('#conversation-reply-input').popover({
+    html: true,
+    placement: 'top',
+    trigger: "manual",
+    content: function() {
+        return $("#tagging-popover").html();
+    }
+});
+
+function hideTagPopover() {
+    $('#conversation-reply-input').popover('hide');
+}
+
+function showTagPopover() {
+    $('#conversation-reply-input').popover('show');
+}
+
+function textToMusicTag() {
+    var replyContent = $('.conversation-reply-input').val();
+    var pos = replyContent.lastIndexOf("#");
+    var newstring = replyContent.substring(0, pos).trim() + " #liberi_fatali ";
+
+    $('.conversation-reply-input').val(newstring);
+    hideTagPopover();
+}
+
+$('body').on('click', function (e) {
+    if ($(e.target).data('toggle') !== 'popover' && $(e.target).parents('.popover.in').length === 0) {
+        hideTagPopover();
+    }
+});

@@ -39,7 +39,7 @@
             </div>
 
             <ul class="nav nav-sidebar">
-                <li class="nav-sidebar-item" data-pane-name="resource"><a href="#">Resources</a></li>
+                <li class="nav-sidebar-item hide-right" data-pane-name="resource"><a href="#">Resources</a></li>
             </ul>
             <h4 class="sidebar-header">Starred</h4>
             <ul class="nav nav-sidebar">
@@ -165,11 +165,36 @@
             <div class="conversation-reply col-md-12 ">
 
                 <div class="input-group">
-                    <input type="text" class="form-control conversation-reply-input">
+                    <input type="text" class="form-control conversation-reply-input" id="conversation-reply-input">
                     <span class="input-group-btn">
                         <button class="btn btn-default js-send-reply" type="button">Send</button>
                     </span>
                 </div>
+
+
+                <div id="tagging-popover" class="hide">
+
+                    <div class="music-tag-entry" onclick="textToMusicTag()">
+                        <div class="music-tag-type"><span class='glyphicon glyphicon-music'></span></div>
+                        <div class="music-tag-filename">liberi_fatali.mp3</div>
+                        <div class="music-tag-info pull-right text-muted">public</div>
+                    </div>
+
+                    <div class="music-tag-entry" onclick="textToMusicTag()">
+                        <div class="music-tag-type"><span class='glyphicon glyphicon-music'></span></div>
+                        <div class="music-tag-filename">liberi_fatali.mp3</div>
+                        <div class="music-tag-info pull-right text-muted">public</div>
+                    </div>
+
+                    <div class="music-tag-entry" onclick="textToMusicTag()">
+                        <div class="music-tag-type"><span class='glyphicon glyphicon-music'></span></div>
+                        <div class="music-tag-filename">liberi_fatali.mp3</div>
+                        <div class="music-tag-info pull-right text-muted">public</div>
+                    </div>
+
+                </div>
+
+
             </div>
 
         </div>
@@ -266,7 +291,7 @@
         </div>
 
         <div class="col-sm-4 col-md-4 right-panel music-panel-container">
-            <div class="right-panel-close-btn"></div>
+            <div class="right-panel-close-btn hide-right"></div>
             <div class="music-panel-header">
                 <h2>
                     <span class="glyphicon glyphicon-music"></span>
@@ -395,7 +420,7 @@
                     <span class="glyphicon glyphicon-pencil"></span>  Add Comment
                 </button>
 
-                <div id="popover-content" class="hide">
+                <div id="add-comment-popover" class="hide">
 
                     <div class="form-group">
                         <label for="new-comment-area">Comment:</label>
@@ -403,8 +428,8 @@
                     </div>
 
                     <div class="text-center">
-                        <button class="btn btn-sm btn-default new-comment-close" onclick="popoverClose()">Cancel</button>
-                        <button class="btn btn-sm btn-primary new-comment-confirm" onclick="popoverClose()">Add</button>
+                        <button class="btn btn-sm btn-default new-comment-close" onclick="addCommentClose()">Cancel</button>
+                        <button class="btn btn-sm btn-primary new-comment-confirm" onclick="addCommentClose()">Add</button>
                     </div>
                 </div>
 
