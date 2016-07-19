@@ -22,6 +22,53 @@ $('.right-panel-close-btn').on('click', function () {
     });
 });
 
+$('.js-send-reply').on('click', addReply);
+
+$('.conversation-reply-input').on('keyup', function (e) {
+    if (e.keyCode === 13) {
+        addReply();
+    }
+});
+
+function create_el(tag, parent, class_name, text, attr, title) {
+    var e = document.createElement(tag);
+    var $el = $(e);
+    if (class_name) {
+        e.className = class_name;
+    }
+    if (text) {
+        $el.text(text);
+    }
+    if (attr) {
+        $el.attr(attr);
+    }
+    if (title) {
+        e.title = title;
+    }
+    if (parent) {
+        parent[0].appendChild($el[0]);
+    }
+    return $el;
+}
+
+function addReply() {
+    var replyContent = $('.conversation-reply-input').val();
+
+    if (replyContent === '') {
+        return;
+    }
+
+    var newConversationEntry = create_el('div', null, 'conversation-entry');
+    create_el('img', newConversationEntry, 'conversation-avatar', '', {src: 'img/profile.jpg'});
+    create_el('div', newConversationEntry, 'conversation-text', replyContent);
+
+    $('.conversation-content')
+        .append(newConversationEntry)
+        .scrollTop($('.conversation-content')[0].scrollHeight);
+
+    $('.conversation-reply-input').val('').focus();
+}
+
 function openMiddlePane(paneName) {
     $('.middle-pane').removeClass('is-active');
     $('.' + paneName + '-container').addClass('is-active');
