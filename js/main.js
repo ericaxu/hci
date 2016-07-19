@@ -62,7 +62,7 @@ function addReply() {
         return;
     }
 
-    var newConversationEntry = create_el('div', null, 'conversation-entry');
+    var newConversationEntry = create_el('div', null, 'conversation-entry pull-left');
     create_el('img', newConversationEntry, 'conversation-avatar', '', {src: 'img/profile.jpg'});
     create_el('div', newConversationEntry, 'conversation-text', replyContent);
 
