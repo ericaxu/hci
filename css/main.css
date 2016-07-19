@@ -190,6 +190,9 @@ html, body, .container-fluid, .row {
     display: flex;
 }
 
+
+/* Resources and files */
+
 .resource-file {
     height: 120px;
     width: 100px;
@@ -225,6 +228,13 @@ html, body, .container-fluid, .row {
     display: block;
 }
 
+
+
+.hidden-file-uploader {
+    display: block;
+    width: 0;
+    height: 0;
+}
 
 
 

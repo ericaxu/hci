@@ -7,6 +7,12 @@ $('.nav-sidebar-item').on('click', function (e) {
     openMiddlePane($(this).data('paneName'));
 });
 
+$('.js-upload-file').on('click', function(e) {
+    $('.hidden-file-uploader').click();
+
+    e.preventDefault();
+});
+
 function openMiddlePane(paneName) {
     $('.middle-pane').removeClass('is-active');
     $('.' + paneName + '-container').addClass('is-active');
