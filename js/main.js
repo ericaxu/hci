@@ -7,10 +7,19 @@ $('.nav-sidebar-item').on('click', function (e) {
     openMiddlePane($(this).data('paneName'));
 });
 
-$('.js-upload-file').on('click', function(e) {
+$('.js-upload-file').on('click', function (e) {
     $('.hidden-file-uploader').click();
 
     e.preventDefault();
+});
+
+$('.right-panel-close-btn').on('click', function () {
+    var rightPanel = $(this).closest('.right-panel');
+    var originalWidth = rightPanel.outerWidth();
+    $('.middle-pane').removeClass('col-md-6').addClass('col-md-10');
+    rightPanel.animate({'left': originalWidth}, 300, function () {
+        rightPanel.hide();
+    });
 });
 
 function openMiddlePane(paneName) {
@@ -18,10 +27,9 @@ function openMiddlePane(paneName) {
     $('.' + paneName + '-container').addClass('is-active');
 }
 
-
 function position() {
-    $(".comments-hook").position ({
-        of: $( "#comments-bar" ),
+    $(".comments-hook").position({
+        of: $("#comments-bar"),
         my: "center top",
         at: "left top",
         offset: "20 30",
@@ -30,19 +38,19 @@ function position() {
 }
 
 function showComments(ms) {
-    $("[class^=comments-entry-]").css('display','none');
+    $("[class^=comments-entry-]").css('display', 'none');
 
     if (inRange(18800, ms)) {
-        $('.comments-entry-18800').css('display','inline-block');
+        $('.comments-entry-18800').css('display', 'inline-block');
 
     } else if (inRange(37600, ms)) {
-        $('.comments-entry-37600').css('display','inline-block');
+        $('.comments-entry-37600').css('display', 'inline-block');
 
     } else if (inRange(84600, ms)) {
-        $('.comments-entry-84600').css('display','inline-block');
+        $('.comments-entry-84600').css('display', 'inline-block');
 
     } else if (inRange(112800, ms)) {
-        $('.comments-entry-112800').css('display','inline-block');
+        $('.comments-entry-112800').css('display', 'inline-block');
 
     }
 }
@@ -62,7 +70,7 @@ function setSliderValue(val) {
     showComments(val);
 }
 
-$("#wave-slider").on("change", function(slideEvt) {
+$("#wave-slider").on("change", function (slideEvt) {
     $("#wave-slider-value").text(convertTime(slideEvt.value.newValue));
     showComments(slideEvt.value.newValue);
 });

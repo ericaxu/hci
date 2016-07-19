@@ -137,6 +137,10 @@
     display: flex;
     flex-flow: column;
     height: 100%;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .conversation-header {
@@ -229,11 +233,28 @@ html, body, .container-fluid, .row {
 }
 
 
-
 .hidden-file-uploader {
     display: block;
     width: 0;
     height: 0;
+}
+
+/* Collapsible right panel */
+.right-panel-close-btn {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 30px;
+    height: 20px;
+    padding: 8px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    width: 36px;
+    color: #666;
+}
+
+.right-panel-close-btn:after {
+    content: "\D7";
 }
 
 
