@@ -412,3 +412,31 @@ html, body, .container-fluid, .row {
     background-color: #ffbb11;
     border: none;
 }
+
+
+
+/* Music Panel Comments Popover */
+
+.popover {
+    max-width: 100%;
+}
+
+.popover-content {
+    margin-bottom: 5px;
+}
+
+.new-comment-close {
+    width: 85px;
+    margin-right: 10px;
+}
+
+.new-comment-confirm {
+    width: 140px;
+    margin-left: 10px;
+}
+
+#new-comment-area {
+    resize: none;
+    width: 350px;
+}
+

@@ -1,3 +1,7 @@
+$(".btn").mouseup(function(){
+    $(this).blur();
+});
+
 $('.nav-sidebar-item').on('click', function (e) {
     e.preventDefault();
 
@@ -121,3 +125,24 @@ $("#wave-slider").on("change", function (slideEvt) {
     $("#wave-slider-value").text(convertTime(slideEvt.value.newValue));
     showComments(slideEvt.value.newValue);
 });
+
+
+
+// Addresses bug : https://github.com/twbs/bootstrap/issues/16732
+// Solution from : https://github.com/twbs/bootstrap/pull/17702
+$('body').on('hidden.bs.popover', function (e) {
+    $(e.target).data("bs.popover").inState = { click: false, hover: false, focus: false }
+});
+
+
+$('#btn-add-comment').popover({
+    html: true,
+    placement: 'top',
+    content: function() {
+        return $("#popover-content").html();
+    }
+});
+
+function popoverClose() {
+    $('#btn-add-comment').popover('hide');
+}
