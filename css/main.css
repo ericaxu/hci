@@ -466,3 +466,43 @@ html, body, .container-fluid, .row {
     width: 350px;
 }
 
+
+/* Music Tagging */
+
+.music-tag {
+    margin: -3px 3px 0 3px;
+}
+
+.music-tag-entry {
+    padding: 5px 10px 10px 10px;
+    margin-top: 5px;
+    border-bottom: 1px solid #aaa;
+    min-width: 500px;
+    cursor: pointer;
+}
+
+.music-tag-entry:last-child {
+    padding: 5px 10px 5px 10px;
+    margin-top: 5px;
+    min-width: 500px;
+    border: none;
+}
+
+.music-tag-filename {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.music-tag-type {
+    display: inline-block;
+}
+
+.music-tag-info {
+    display: inline-block;
+}
+
+.conversation-reply .popover {
+    background-color: #fafafa;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    left: 0 !important;
+}
