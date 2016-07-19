@@ -73,6 +73,8 @@ $('.conversation-reply-input').on('keyup', function (e) {
 });
 
 
+$('.js-create-conversation').on('click', createConversation);
+
 function create_el(tag, parent, class_name, text, attr, title) {
     var e = document.createElement(tag);
     var $el = $(e);
@@ -122,6 +124,13 @@ function addReply() {
         .scrollTop($('.conversation-content')[0].scrollHeight);
 
     $('.conversation-reply-input').val('').focus();
+}
+
+function createConversation() {
+    var newConversationListItem = create_el('li');
+    create_el('a', newConversationListItem, '', 'New conversation', {href: '#'});
+
+    $('.conversation-sidebar-list').append(newConversationListItem);
 }
 
 function openMiddlePane(paneName) {
