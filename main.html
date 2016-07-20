@@ -24,7 +24,6 @@
     <div class="row">
 
 
-
         <div class="col-sm-3 col-md-2 sidebar">
             <div class="profile-container clearfix">
                 <div class="profile-img-container">
@@ -43,15 +42,19 @@
             </ul>
             <h4 class="sidebar-header">Starred</h4>
             <ul class="nav nav-sidebar">
-                <li class="nav-sidebar-item active" data-panel-name="conversation"><a href="#">Apple pie lollipop <span class="badge badge-custom">1</span></a></li>
-                <li class="nav-sidebar-item" data-panel-name="conversation"><a href="#">marshmallow croissant <span class="badge badge-custom">13</span></a></li>
+                <li class="nav-sidebar-item active" data-panel-name="conversation"><a href="#">Apple pie lollipop <span
+                        class="badge badge-custom">1</span></a></li>
+                <li class="nav-sidebar-item" data-panel-name="conversation"><a href="#">marshmallow croissant <span
+                        class="badge badge-custom">13</span></a></li>
             </ul>
             <h4 class="sidebar-header">Conservations</h4>
             <button type="button" class="btn btn-xs btn-default new-convo-btn js-create-conversation">Create</button>
             <ul class="nav nav-sidebar conversation-sidebar-list">
-                <li class="nav-sidebar-item" data-panel-name="conversation"><a href="#">Conversation 1 <span class="badge badge-custom">2</span></a></li>
+                <li class="nav-sidebar-item" data-panel-name="conversation"><a href="#">Conversation 1 <span
+                        class="badge badge-custom">2</span></a></li>
                 <li class="nav-sidebar-item" data-panel-name="conversation"><a href="#">Conversation 2</a></li>
-                <li class="nav-sidebar-item" data-panel-name="conversation"><a href="#">Conversation 3 <span class="badge badge-custom">6</span></a></li>
+                <li class="nav-sidebar-item" data-panel-name="conversation"><a href="#">Conversation 3 <span
+                        class="badge badge-custom">6</span></a></li>
                 <li class="nav-sidebar-item" data-panel-name="conversation"><a href="#">Conversation 4</a></li>
             </ul>
         </div>
@@ -73,7 +76,7 @@
                         <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
                         <span>Files</span>
                     </button>
-                    <button type="button" class="btn btn-default">
+                    <button type="button" class="btn btn-default show-right" data-panel-name="members">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                         <span>Members</span>
                     </button>
@@ -321,14 +324,20 @@
                         <span id="curTime"><span id="wave-slider-value">00:00:00.000</span></span>
 
                         <div class="music-slider">
-                            <input id="wave-slider" type="text" data-slider-min="0" data-slider-max="188000" data-slider-step="1" data-slider-value="0" data-slider-handle="custom" data-slider-tooltip="hide"/>
+                            <input id="wave-slider" type="text" data-slider-min="0" data-slider-max="188000"
+                                   data-slider-step="1" data-slider-value="0" data-slider-handle="custom"
+                                   data-slider-tooltip="hide"/>
                         </div>
 
                         <div id="comments-bar">
-                            <button type="button" class="btn btn-default btn-circle comments-hook" onclick="setSliderValue(18800)" style="left: calc(10% - 5px)"></button>
-                            <button type="button" class="btn btn-default btn-circle comments-hook" onclick="setSliderValue(37600)" style="left: calc(20% - 5px)"></button>
-                            <button type="button" class="btn btn-default btn-circle comments-hook" onclick="setSliderValue(84600)" style="left: calc(45% - 5px)"></button>
-                            <button type="button" class="btn btn-default btn-circle comments-hook" onclick="setSliderValue(112800)" style="left: calc(60% - 5px)"></button>
+                            <button type="button" class="btn btn-default btn-circle comments-hook"
+                                    onclick="setSliderValue(18800)" style="left: calc(10% - 5px)"></button>
+                            <button type="button" class="btn btn-default btn-circle comments-hook"
+                                    onclick="setSliderValue(37600)" style="left: calc(20% - 5px)"></button>
+                            <button type="button" class="btn btn-default btn-circle comments-hook"
+                                    onclick="setSliderValue(84600)" style="left: calc(45% - 5px)"></button>
+                            <button type="button" class="btn btn-default btn-circle comments-hook"
+                                    onclick="setSliderValue(112800)" style="left: calc(60% - 5px)"></button>
                         </div>
                     </div>
 
@@ -354,7 +363,8 @@
                     <div class="col-sm-9">
                         <div class="comments-wrapper pull-right">
                             <img class="comments-avatar" src="img/profile2.jpg" alt="">
-                            <p class="comments-text">Surely this isn't too big of an issue. We can fix it during the next apocalypse.</p>
+                            <p class="comments-text">Surely this isn't too big of an issue. We can fix it during the
+                                next apocalypse.</p>
                         </div>
                     </div>
                 </div>
@@ -364,7 +374,8 @@
                     <div class="col-sm-9">
                         <div class="comments-wrapper pull-right">
                             <img class="comments-avatar" src="img/profile.jpg" alt="">
-                            <p class="comments-text">Once upon a time the world exploded into a million pieces. The end.</p>
+                            <p class="comments-text">Once upon a time the world exploded into a million pieces. The
+                                end.</p>
                         </div>
                     </div>
                 </div>
@@ -384,7 +395,9 @@
                     <div class="col-sm-9">
                         <div class="comments-wrapper pull-right">
                             <img class="comments-avatar" src="img/profile.jpg" alt="">
-                            <p class="comments-text">Jelly-o muffin donut powder dessert. Cookie halvah biscuit jelly. Ice cream pastry candy lollipop danish. Cupcake cupcake cake bonbon wafer macaroon chocolate bar.</p>
+                            <p class="comments-text">Jelly-o muffin donut powder dessert. Cookie halvah biscuit jelly.
+                                Ice cream pastry candy lollipop danish. Cupcake cupcake cake bonbon wafer macaroon
+                                chocolate bar.</p>
                         </div>
                     </div>
                 </div>
@@ -415,7 +428,7 @@
             <div class="col-md-12 music-panel-add">
 
                 <button id="btn-add-comment" type="button" class="btn btn-default center-block">
-                    <span class="glyphicon glyphicon-pencil"></span>  Add Comment
+                    <span class="glyphicon glyphicon-pencil"></span> Add Comment
                 </button>
 
                 <div id="add-comment-popover" class="hide">
@@ -426,14 +439,16 @@
                     </div>
 
                     <div class="text-center">
-                        <button class="btn btn-sm btn-default new-comment-close" onclick="addCommentClose()">Cancel</button>
-                        <button class="btn btn-sm btn-primary new-comment-confirm" onclick="addCommentClose()">Add</button>
+                        <button class="btn btn-sm btn-default new-comment-close" onclick="addCommentClose()">Cancel
+                        </button>
+                        <button class="btn btn-sm btn-primary new-comment-confirm" onclick="addCommentClose()">Add
+                        </button>
                     </div>
                 </div>
 
             </div>
         </div>
-        
+
 
         <div class="col-sm-4 col-md-4 right-panel files-container">
             <div class="right-panel-close-btn hide-right"></div>
@@ -495,7 +510,36 @@
 
         </div>
 
+        <div class="col-sm-4 col-md-4 right-panel members-container">
+            <div class="right-panel-close-btn hide-right"></div>
+            <div class="music-panel-header">
+                <h2>
+                    <span class="glyphicon glyphicon-user"></span>
+                    <span>&nbsp;Members</span>
+                </h2>
+            </div>
 
+            <div class="container">
+                <button class="btn btn-primary btn-md">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    &nbsp;Add member
+                </button>
+            </div>
+
+            <ul class="list-group member-panel-members-list">
+                <li class="list-group-item">
+                    <img src="img/profile.jpg" alt="" class="member-panel-profile"></td>
+                    <span class="member-panel-member-name">A guy</span>
+                    <span class="delete-member"></span>
+                </li>
+                <li class="list-group-item">
+                    <img src="img/profile2.jpg" alt="" class="member-panel-profile"></td>
+                    <span class="member-panel-member-name">Another guy</span>
+                    <span class="delete-member"></span>
+                </li>
+            </ul>
+
+        </div>
     </div>
 
     <input type="file" class="hidden-file-uploader hide"/>

@@ -302,7 +302,7 @@ html, body, .container-fluid, .row {
 
 /* Music Panel General */
 
-.music-panel-container {
+.right-panel {
     position: relative;
     display: flex;
     flex-flow: column;
@@ -523,17 +523,33 @@ html, body, .container-fluid, .row {
 }
 
 
-/* Files Panel General */
+/* Members Panel */
+.member-panel-profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+}
 
-.files-container {
-    position: relative;
-    display: flex;
-    flex-flow: column;
-    height: 100%;
-    background-color: #f5f5f5;
-    border-left: 1px solid #eee;
-    padding-left: 25px;
-    padding-right: 25px;
+.member-panel-members-list {
+    margin-top: 20px;
+}
+
+.member-panel-member-name {
+    font-size: 1.3em;
+    margin-left: 10px;
+}
+
+.delete-member {
+    font-size: 30px;
+    position: absolute;
+    top: 8px;
+    bottom: 0;
+    right: 20px;
+    cursor: pointer;
+}
+
+.delete-member:after {
+    content: "\D7";
 }
 
 .files-container .resource-file {
