@@ -1,14 +1,25 @@
+
+//
+//      Misc
+//
+
 $(".btn").mouseup(function(){
     $(this).blur();
 });
 
-$('.nav-sidebar-item').on('click', function (e) {
+
+
+//
+//      Nav Controls
+//
+
+$(document).on('click', ".nav-sidebar-item", function(e) {
     e.preventDefault();
 
     $('.nav-sidebar-item').removeClass('active');
     $(this).addClass('active');
 
-    openMiddlePane($(this).data('paneName'));
+    openMiddlePane($(this).data('panelName'));
 });
 
 $('.js-upload-file').on('click', function (e) {
@@ -17,33 +28,47 @@ $('.js-upload-file').on('click', function (e) {
     e.preventDefault();
 });
 
-$('.js-switch-to-convo').on('click', function(e) {
-    var conversationName = $(this).text().trim();
 
-    openMiddlePane('conversation');
 
-    $('.current-conversation-title').text(conversationName);
-});
+//
+//      Show / Hide Panel Content
+//
+
+function openMiddlePane(panelName) {
+    $('.middle-panel').removeClass('is-active');
+    $('.' + panelName + '-container').addClass('is-active');
+}
+
+function openRightPane(panelName) {
+    $('.right-panel').removeClass('is-active');
+    $('.' + panelName + '-container').addClass('is-active');
+}
 
 
 
 //
-//      Conversation Reply
+//      Show / Hide Right Panel
 //
 
-$(document).on('click', ".hide-right", function(){
+$(document).on('click', ".hide-right", function() {
     var rightPanel = $(this).closest('.right-panel');
     var originalWidth = rightPanel.outerWidth();
-    $('.middle-pane').removeClass('col-md-6').addClass('col-md-10');
+
+    $('.middle-panel').removeClass('col-md-6').addClass('col-md-10');
     rightPanel.animate({'left': originalWidth}, 300, function () {
         rightPanel.hide();
     });
+
+    $('.right-panel').removeClass('is-active');
 });
 
 
-$(document).on('click', ".show-right", function(){
+$(document).on('click', ".show-right", function() {
     var rightPanel = $('.right-panel');
-    $('.middle-pane').removeClass('col-md-10').addClass('col-md-6');
+    $('.middle-panel').removeClass('col-md-10').addClass('col-md-6');
+
+    openRightPane($(this).data('panelName'));
+
     rightPanel.animate({'left': 0}, 300, function () {
         rightPanel.show();
     });
@@ -117,7 +142,7 @@ function addReply() {
     var newConversationContent = create_el('div', newConversationEntry, 'conversation-text');
 
     var replyContentSplit = replyContent.split("#liberi_fatali ");
-    var tag = "<button class='btn btn-xs btn-default music-tag show-right'><span class='glyphicon glyphicon-music'></span><span>&nbsp;&nbsp;liberi_fatali</span></button> ";
+    var tag = "<button class='btn btn-xs btn-default music-tag show-right' data-panel-name='music-panel'><span class='glyphicon glyphicon-music'></span><span>&nbsp;&nbsp;liberi_fatali</span></button> ";
     var innerContentHTML = "";
 
     for (var i = 0; i < replyContentSplit.length; i++) {
@@ -135,17 +160,11 @@ function addReply() {
 }
 
 function createConversation() {
-    var newConversationListItem = create_el('li');
+    var newConversationListItem = create_el('li', null, 'nav-sidebar-item', null, {'data-panel-name': 'conversation'});
     create_el('a', newConversationListItem, '', 'New conversation', {href: '#'});
 
     $('.conversation-sidebar-list').append(newConversationListItem);
 }
-
-function openMiddlePane(paneName) {
-    $('.middle-pane').removeClass('is-active');
-    $('.' + paneName + '-container').addClass('is-active');
-}
-
 
 
 
