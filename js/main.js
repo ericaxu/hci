@@ -276,6 +276,23 @@ function textToMusicTag() {
     hideTagPopover();
 }
 
+function linkMusicToText() {
+    var replyContent = $('.conversation-reply-input').val();
+    $('.conversation-reply-input').val(replyContent + " #liberi_fatali ");
+}
+
+$('.resource-file-tag-action').on('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    linkMusicToText();
+    $('.conversation-reply-input').focus();
+});
+
+$('.resource-file').on('click', function () {
+    openRightPane('music-panel');
+});
+
 $('body').on('click', function (e) {
     if ($(e.target).data('toggle') !== 'popover' && $(e.target).parents('.popover.in').length === 0) {
         hideTagPopover();
