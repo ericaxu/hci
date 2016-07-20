@@ -114,7 +114,8 @@
 }
 
 .profile-container {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    margin-top: 10px;
 }
 
 .profile-pic {
@@ -129,7 +130,8 @@
 }
 
 .profile-detail-container {
-    float: right;
+    float: left;
+    margin-left: 20px;
 }
 
 .badge-custom {
@@ -157,13 +159,34 @@
 
 .conversation-header {
     flex: 0 1 auto;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     padding-right: 10px;
     padding-left: 10px;
 }
 
 .conversation-actions {
     margin-top: 10px;
+    margin-left: 35px;
+}
+
+.conversation-live-actions {
+    top: 6px;
+    margin-left: 15px;
+    display: inline-block;
+    position: relative;
+}
+
+.conversation-live-actions .live-action {
+    height: 40px;
+    width: 40px;
+    font-size: 26px;
+    padding: 2px 0 0 3px;
+    margin-right: 5px;
+}
+
+.conversation-live-actions .live-action-offset {
+    font-size: 20px;
+    padding: 3px 0 0 2px;
 }
 
 .conversation-content {

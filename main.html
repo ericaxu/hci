@@ -33,7 +33,7 @@
                     <h4 class="profile-name">Mance Rayder</h4>
                     <a href="#">Settings</a>
                     &nbsp;·&nbsp;
-                    <a href="#">Logout</a>
+                    <a href="index.html">Logout</a>
                 </div>
             </div>
 
@@ -42,20 +42,20 @@
             </ul>
             <h4 class="sidebar-header">Starred</h4>
             <ul class="nav nav-sidebar">
-                <li class="nav-sidebar-item active" data-panel-name="conversation"><a href="#">Apple pie lollipop <span
+                <li class="nav-sidebar-item hide-right active" data-panel-name="conversation"><a href="#">Apple pie lollipop <span
                         class="badge badge-custom">1</span></a></li>
-                <li class="nav-sidebar-item" data-panel-name="conversation"><a href="#">marshmallow croissant <span
+                <li class="nav-sidebar-item hide-right" data-panel-name="conversation"><a href="#">marshmallow croissant <span
                         class="badge badge-custom">13</span></a></li>
             </ul>
             <h4 class="sidebar-header">Conservations</h4>
             <button type="button" class="btn btn-xs btn-default new-convo-btn js-create-conversation">Create</button>
             <ul class="nav nav-sidebar conversation-sidebar-list">
-                <li class="nav-sidebar-item" data-panel-name="conversation"><a href="#">Conversation 1 <span
+                <li class="nav-sidebar-item hide-right" data-panel-name="conversation"><a href="#">Conversation 1 <span
                         class="badge badge-custom">2</span></a></li>
-                <li class="nav-sidebar-item" data-panel-name="conversation"><a href="#">Conversation 2</a></li>
-                <li class="nav-sidebar-item" data-panel-name="conversation"><a href="#">Conversation 3 <span
+                <li class="nav-sidebar-item hide-right" data-panel-name="conversation"><a href="#">Conversation 2</a></li>
+                <li class="nav-sidebar-item hide-right" data-panel-name="conversation"><a href="#">Conversation 3 <span
                         class="badge badge-custom">6</span></a></li>
-                <li class="nav-sidebar-item" data-panel-name="conversation"><a href="#">Conversation 4</a></li>
+                <li class="nav-sidebar-item hide-right" data-panel-name="conversation"><a href="#">Conversation 4</a></li>
             </ul>
         </div>
 
@@ -67,6 +67,16 @@
                     <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
                     <span class="current-conversation-title" contenteditable="true">Conversation name</span>
                 </h2>
+
+                <div class="conversation-live-actions" role="group">
+                    <button type="button" class="btn btn-default live-action live-action-offset">
+                        <span class="glyphicon glyphicon-ice-lolly" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-default live-action">
+                        <span class="glyphicon glyphicon-volume-off" aria-hidden="true"></span>
+                    </button>
+                </div>
+
                 <div class="btn-group btn-group-sm conversation-actions" role="group">
                     <button type="button" class="btn btn-default js-upload-file">
                         <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
@@ -85,6 +95,7 @@
                         <span>Leave</span>
                     </button>
                 </div>
+
             </div>
 
             <div class="conversation-content">
@@ -194,11 +205,10 @@
                     </div>
 
                 </div>
-
-
             </div>
 
         </div>
+
 
         <div class="col-sm-5 col-sm-offset-3 col-md-6 col-md-offset-2 middle-panel resource-container">
             <div class="conversation-header">

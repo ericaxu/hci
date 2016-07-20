@@ -105,9 +105,6 @@ $('.conversation-reply-input').on('keyup', function (e) {
     }
 });
 
-
-$('.js-create-conversation').on('click', createConversation);
-
 function create_el(tag, parent, class_name, text, attr, title) {
     var e = document.createElement(tag);
     var $el = $(e);
@@ -159,11 +156,29 @@ function addReply() {
     $('.conversation-reply-input').val('').focus();
 }
 
+
+
+//
+//      Conversation Create
+//
+
+
+$('.js-create-conversation').on('click', createConversation);
+
 function createConversation() {
-    var newConversationListItem = create_el('li', null, 'nav-sidebar-item', null, {'data-panel-name': 'conversation'});
+    var newConversationListItem = create_el('li', null, 'nav-sidebar-item hide-right', null, {'data-panel-name': 'conversation'});
     create_el('a', newConversationListItem, '', 'New conversation', {href: '#'});
 
     $('.conversation-sidebar-list').append(newConversationListItem);
+    newConversationListItem.click();
+
+    $('.middle-panel').removeClass('col-md-10').addClass('col-md-6');
+
+    openRightPane('members');
+    var rightPanel = $('.right-panel');
+    rightPanel.animate({'left': 0}, 300, function () {
+        rightPanel.show();
+    });
 }
 
 
